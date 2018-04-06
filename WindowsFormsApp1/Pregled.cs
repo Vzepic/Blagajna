@@ -33,7 +33,11 @@ namespace WindowsFormsApp1
             }
             OznakaBlagajne_cb.SelectedIndex = 0;
 
-            VrstaKnjizenja_cb.SelectedIndex = 0;
+            VrstaKnjizenja_cb.SelectedIndex = 2;
+
+            PregledZa_cb.Items.AddRange(BazaZaPregled.DohvatiOsobe().ToArray());
+
+            IznosOperator_cb.SelectedIndex = 0;
             //BazaZaPregled.OpenConn("ZERO\\NOWY", "nova_apl17", "Vjeko", "Vzepic3101");
         }
 
@@ -42,7 +46,7 @@ namespace WindowsFormsApp1
             DataTable Prikaz = BazaZaPregled.DohvatiZaPregled(OznakaBlagajne_cb.SelectedIndex.ToString().PadLeft(2, '0'), VrstaKnjizenja_cb.SelectedIndex.ToString().PadLeft(2, '0'), DatumOd_dtp.Value, DatumDo_dtp.Value, IznosOperator_cb.Text, Convert.ToDouble(Iznos_tb.Text), PregledZa_cb.Text, Konto_cb.Text);
             foreach (DataRow Row in Prikaz.Rows)
             {
-                Prikaz_dgv.Rows.Add(Row["OznakaBlagajne"].ToString().Trim(),Row["VrstaKnjizenja"].ToString().Trim(), Row["DatumDokumenta"].ToString().Trim(), Row["BrojDokumenta"].ToString().Trim(), Row["VrstaKnjizenja"].ToString().Trim()=="00"|| Row["VrstaKnjizenja"].ToString().Trim()=="01"? Row["Iznos"].ToString().Trim():"", Row["VrstaKnjizenja"].ToString().Trim() == "02" ? "-"+Row["Iznos"].ToString().Trim() : "", Row["Osoba"].ToString().Trim(), Row["Konto"].ToString().Trim(), Row["MjestoTroska"].ToString().Trim(), Row["BrojTemeljnice"].ToString().Trim(), Row["Opis"].ToString().Trim(), Row["id_gbbla"].ToString().Trim());
+                Prikaz_dgv.Rows.Add(Row["OznakaBlagajne"].ToString().Trim(),Row["VrstaKnjizenja"].ToString().Trim(), Row["DatumDokumenta"].ToString().Trim(), Row["BrojDokumenta"].ToString().Trim(), Row["VrstaKnjizenja"].ToString().Trim()=="00"|| Row["VrstaKnjizenja"].ToString().Trim()=="01"? Row["Iznos"].ToString().Trim():"", Row["VrstaKnjizenja"].ToString().Trim() == "02" ? Row["Iznos"].ToString().Trim() : "", Row["Osoba"].ToString().Trim(), Row["Konto"].ToString().Trim(), Row["MjestoTroska"].ToString().Trim(), Row["BrojTemeljnice"].ToString().Trim(), Row["Opis"].ToString().Trim(), Row["id_gbbla"].ToString().Trim());
             }
 
 

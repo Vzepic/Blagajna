@@ -75,6 +75,7 @@
             this.Controls.Add(this.PrikazKonta_dgv);
             this.Name = "PrikazKonta";
             this.Text = "PrikazKonta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PrikazKonta_FormClosing);
             this.Load += new System.EventHandler(this.PrikazKonta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PrikazKonta_dgv)).EndInit();
             this.ResumeLayout(false);

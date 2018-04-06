@@ -39,5 +39,17 @@ namespace WindowsFormsApp1
             KontoZaPrikaz = PrikazKonta_dgv.Rows[e.RowIndex].Cells[0].Value.ToString();
             this.Close();
         }
+
+
+
+        private void PrikazKonta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (KontoZaPrikaz == string.Empty)
+            {
+                MessageBox.Show("Molim odaberite konto");
+                e.Cancel = true;
+
+            }
+        }
     }
 }
