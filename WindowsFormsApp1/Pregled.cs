@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         public List<object> Povrat = new List<object>();
         public int BrojBlagajni = new int();
         public string ImeFirme;
+        public string AdresaFirme;
 
         public Pregled()
         {
@@ -27,6 +28,7 @@ namespace WindowsFormsApp1
         {
             BazaZaPregled = new Database();
             BazaZaPregled.OpenConn("", "nova_apl17", "", "");
+            //BazaZaPregled.OpenConn("ZERO\\NOWY", "nova_apl17", "Vjeko", "Vzepic3101");
 
             OznakaBlagajne_cb.Items.Add("");
             for (int i=0;i<BrojBlagajni;i++)
@@ -40,13 +42,16 @@ namespace WindowsFormsApp1
             PregledZa_cb.Items.AddRange(BazaZaPregled.DohvatiOsobe().ToArray());
 
             IznosOperator_cb.SelectedIndex = 0;
-            //BazaZaPregled.OpenConn("ZERO\\NOWY", "nova_apl17", "Vjeko", "Vzepic3101");
+
+            Iznos_tb.Text = "0";
+
+            DatumOd_dtp.Value = BazaZaPregled.DohvatiMinDatum();
         }
 
         private void Trazi_bt_Click(object sender, EventArgs e)
         {
             Prikaz_dgv.Rows.Clear();
-            DataTable Prikaz = BazaZaPregled.DohvatiZaPregled(OznakaBlagajne_cb.Text!=""?OznakaBlagajne_cb.SelectedIndex.ToString().PadLeft(2, '0'):"", VrstaKnjizenja_cb.Text!=""? VrstaKnjizenja_cb.SelectedIndex.ToString().PadLeft(2, '0'):"", DatumOd_dtp.Value, DatumDo_dtp.Value, IznosOperator_cb.Text, Convert.ToDouble(Iznos_tb.Text), PregledZa_cb.Text, Konto_cb.Text);
+            DataTable Prikaz = BazaZaPregled.DohvatiZaPregled(OznakaBlagajne_cb.Text!=""?(OznakaBlagajne_cb.SelectedIndex-1).ToString().PadLeft(2, '0'):"", VrstaKnjizenja_cb.Text!=""? (VrstaKnjizenja_cb.SelectedIndex-1).ToString().PadLeft(2, '0'):"", DatumOd_dtp.Value, DatumDo_dtp.Value, IznosOperator_cb.Text, Convert.ToDouble(Iznos_tb.Text), PregledZa_cb.Text, Konto_cb.Text);
             foreach (DataRow Row in Prikaz.Rows)
             {
                 Prikaz_dgv.Rows.Add(Row["OznakaBlagajne"].ToString().Trim(),Row["VrstaKnjizenja"].ToString().Trim(), Row["DatumDokumenta"].ToString().Trim(), Row["BrojDokumenta"].ToString().Trim(), Row["VrstaKnjizenja"].ToString().Trim()=="00"|| Row["VrstaKnjizenja"].ToString().Trim()=="01"? Row["Iznos"].ToString().Trim():"", Row["VrstaKnjizenja"].ToString().Trim() == "02" ? Row["Iznos"].ToString().Trim() : "", Row["Osoba"].ToString().Trim(), Row["Konto"].ToString().Trim(), Row["MjestoTroska"].ToString().Trim(), Row["BrojTemeljnice"].ToString().Trim(), Row["Opis"].ToString().Trim(), Row["id_gbbla"].ToString().Trim());
@@ -55,15 +60,16 @@ namespace WindowsFormsApp1
 
         }
 
-
         private void Print_bt_Click(object sender, EventArgs e)
         {
-            DataTable Prikaz = BazaZaPregled.DohvatiZaPregled(OznakaBlagajne_cb.Text != "" ? OznakaBlagajne_cb.SelectedIndex.ToString().PadLeft(2, '0') : "", VrstaKnjizenja_cb.Text != "" ? VrstaKnjizenja_cb.SelectedIndex.ToString().PadLeft(2, '0') : "", DatumOd_dtp.Value, DatumDo_dtp.Value, IznosOperator_cb.Text, Convert.ToDouble(Iznos_tb.Text), PregledZa_cb.Text, Konto_cb.Text);
-            DataSet1 ZaReport = new DataSet1();
-            DataTable Tablica = new DataTable();
-            ZaReport.Tables.Add(Tablica);
-            
-            double saldo = 0;
+            DataTable Prikaz = BazaZaPregled.DohvatiZaPregled(OznakaBlagajne_cb.Text != "" ? (OznakaBlagajne_cb.SelectedIndex-1).ToString().PadLeft(2, '0') : "", VrstaKnjizenja_cb.Text != "" ? (VrstaKnjizenja_cb.SelectedIndex-1).ToString().PadLeft(2, '0') : "", DatumOd_dtp.Value, DatumDo_dtp.Value, IznosOperator_cb.Text, Convert.ToDouble(Iznos_tb.Text), PregledZa_cb.Text, Konto_cb.Text);
+            //DataSet1 ZaReport = new DataSet1();
+            //DataTable Tablica = new DataTable();
+            //ZaReport.Tables.Add(Tablica);
+
+            ReportForm Izvjesce = new ReportForm("C:\\Users\\Fooler\\Desktop\\Mama posao\\Test\\Blagajna\\WindowsFormsApp1\\IzvjestajSaBazom.rpt", Prikaz, this.ImeFirme,this.AdresaFirme);
+
+            /*double saldo = 0;
             string blagajna="";
 
             foreach (DataRow red in Prikaz.Rows)
@@ -91,7 +97,8 @@ namespace WindowsFormsApp1
 
                 ZaReport.Tables[0].Rows.Add(red[1], red[2], red[3], red[5], red[7], red[8], red[1] == "POC" || red[1] == "UPL" ? red[4]:"", red[1] == "ISP"?red[4]:"",saldo.ToString(),red[0]);
             }
-            ReportForm Izvjesce = new ReportForm("C:\\Users\\Fooler\\Desktop\\Mama posao\\Test\\Blagajna\\WindowsFormsApp1\\IzvjestaqjBlagajne.rpt", ZaReport.Tables[0],this.ImeFirme);
+            //ReportForm Izvjesce = new ReportForm("C:\\Users\\Fooler\\Desktop\\Mama posao\\Test\\Blagajna\\WindowsFormsApp1\\IzvjestajSaBazom.rpt", ZaReport.Tables[0],this.ImeFirme);
+            ReportForm Izvjesce = new ReportForm("C:\\Users\\Fooler\\Desktop\\Mama posao\\Test\\Blagajna\\WindowsFormsApp1\\IzvjestajSaBazom.rpt", Prikaz, this.ImeFirme);*/
             Izvjesce.ShowDialog();
         }
 

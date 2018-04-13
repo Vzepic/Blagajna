@@ -26,6 +26,8 @@ namespace WindowsFormsApp1 {
         
         private Blagajna_tblDataTable tableBlagajna_tbl;
         
+        private BlagajnaBaza_tblDataTable tableBlagajnaBaza_tbl;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +59,9 @@ namespace WindowsFormsApp1 {
                 if ((ds.Tables["Blagajna_tbl"] != null)) {
                     base.Tables.Add(new Blagajna_tblDataTable(ds.Tables["Blagajna_tbl"]));
                 }
+                if ((ds.Tables["BlagajnaBaza_tbl"] != null)) {
+                    base.Tables.Add(new BlagajnaBaza_tblDataTable(ds.Tables["BlagajnaBaza_tbl"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +87,16 @@ namespace WindowsFormsApp1 {
         public Blagajna_tblDataTable Blagajna_tbl {
             get {
                 return this.tableBlagajna_tbl;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public BlagajnaBaza_tblDataTable BlagajnaBaza_tbl {
+            get {
+                return this.tableBlagajnaBaza_tbl;
             }
         }
         
@@ -155,6 +170,9 @@ namespace WindowsFormsApp1 {
                 if ((ds.Tables["Blagajna_tbl"] != null)) {
                     base.Tables.Add(new Blagajna_tblDataTable(ds.Tables["Blagajna_tbl"]));
                 }
+                if ((ds.Tables["BlagajnaBaza_tbl"] != null)) {
+                    base.Tables.Add(new BlagajnaBaza_tblDataTable(ds.Tables["BlagajnaBaza_tbl"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +212,12 @@ namespace WindowsFormsApp1 {
                     this.tableBlagajna_tbl.InitVars();
                 }
             }
+            this.tableBlagajnaBaza_tbl = ((BlagajnaBaza_tblDataTable)(base.Tables["BlagajnaBaza_tbl"]));
+            if ((initTable == true)) {
+                if ((this.tableBlagajnaBaza_tbl != null)) {
+                    this.tableBlagajnaBaza_tbl.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +230,19 @@ namespace WindowsFormsApp1 {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableBlagajna_tbl = new Blagajna_tblDataTable();
             base.Tables.Add(this.tableBlagajna_tbl);
+            this.tableBlagajnaBaza_tbl = new BlagajnaBaza_tblDataTable();
+            base.Tables.Add(this.tableBlagajnaBaza_tbl);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeBlagajna_tbl() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeBlagajnaBaza_tbl() {
             return false;
         }
         
@@ -271,6 +303,9 @@ namespace WindowsFormsApp1 {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void Blagajna_tblRowChangeEventHandler(object sender, Blagajna_tblRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void BlagajnaBaza_tblRowChangeEventHandler(object sender, BlagajnaBaza_tblRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -646,6 +681,490 @@ namespace WindowsFormsApp1 {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class BlagajnaBaza_tblDataTable : global::System.Data.TypedTableBase<BlagajnaBaza_tblRow> {
+            
+            private global::System.Data.DataColumn columnBrojBlagajne;
+            
+            private global::System.Data.DataColumn columnVrstaKnjizenja;
+            
+            private global::System.Data.DataColumn columnBrojDokumenta;
+            
+            private global::System.Data.DataColumn columnDatumDokumenta;
+            
+            private global::System.Data.DataColumn columnIznos;
+            
+            private global::System.Data.DataColumn columnOsoba;
+            
+            private global::System.Data.DataColumn columnOsobaOpis;
+            
+            private global::System.Data.DataColumn columnOpis;
+            
+            private global::System.Data.DataColumn columnKonto;
+            
+            private global::System.Data.DataColumn columnBrojFakture;
+            
+            private global::System.Data.DataColumn columnMjestoTroska;
+            
+            private global::System.Data.DataColumn columnBrojTemeljnice;
+            
+            private global::System.Data.DataColumn columnDatumTemeljnice;
+            
+            private global::System.Data.DataColumn columnSifraRadnika;
+            
+            private global::System.Data.DataColumn columnDatumPromjene;
+            
+            private global::System.Data.DataColumn columnid_gbbla;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public BlagajnaBaza_tblDataTable() {
+                this.TableName = "BlagajnaBaza_tbl";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal BlagajnaBaza_tblDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected BlagajnaBaza_tblDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn BrojBlagajneColumn {
+                get {
+                    return this.columnBrojBlagajne;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn VrstaKnjizenjaColumn {
+                get {
+                    return this.columnVrstaKnjizenja;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn BrojDokumentaColumn {
+                get {
+                    return this.columnBrojDokumenta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DatumDokumentaColumn {
+                get {
+                    return this.columnDatumDokumenta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IznosColumn {
+                get {
+                    return this.columnIznos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn OsobaColumn {
+                get {
+                    return this.columnOsoba;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn OsobaOpisColumn {
+                get {
+                    return this.columnOsobaOpis;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn OpisColumn {
+                get {
+                    return this.columnOpis;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn KontoColumn {
+                get {
+                    return this.columnKonto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn BrojFaktureColumn {
+                get {
+                    return this.columnBrojFakture;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn MjestoTroskaColumn {
+                get {
+                    return this.columnMjestoTroska;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn BrojTemeljniceColumn {
+                get {
+                    return this.columnBrojTemeljnice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DatumTemeljniceColumn {
+                get {
+                    return this.columnDatumTemeljnice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn SifraRadnikaColumn {
+                get {
+                    return this.columnSifraRadnika;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DatumPromjeneColumn {
+                get {
+                    return this.columnDatumPromjene;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn id_gbblaColumn {
+                get {
+                    return this.columnid_gbbla;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public BlagajnaBaza_tblRow this[int index] {
+                get {
+                    return ((BlagajnaBaza_tblRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event BlagajnaBaza_tblRowChangeEventHandler BlagajnaBaza_tblRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event BlagajnaBaza_tblRowChangeEventHandler BlagajnaBaza_tblRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event BlagajnaBaza_tblRowChangeEventHandler BlagajnaBaza_tblRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event BlagajnaBaza_tblRowChangeEventHandler BlagajnaBaza_tblRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddBlagajnaBaza_tblRow(BlagajnaBaza_tblRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public BlagajnaBaza_tblRow AddBlagajnaBaza_tblRow(
+                        string BrojBlagajne, 
+                        string VrstaKnjizenja, 
+                        string BrojDokumenta, 
+                        string DatumDokumenta, 
+                        string Iznos, 
+                        string Osoba, 
+                        string OsobaOpis, 
+                        string Opis, 
+                        string Konto, 
+                        string BrojFakture, 
+                        string MjestoTroska, 
+                        string BrojTemeljnice, 
+                        string DatumTemeljnice, 
+                        string SifraRadnika, 
+                        string DatumPromjene, 
+                        string id_gbbla) {
+                BlagajnaBaza_tblRow rowBlagajnaBaza_tblRow = ((BlagajnaBaza_tblRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        BrojBlagajne,
+                        VrstaKnjizenja,
+                        BrojDokumenta,
+                        DatumDokumenta,
+                        Iznos,
+                        Osoba,
+                        OsobaOpis,
+                        Opis,
+                        Konto,
+                        BrojFakture,
+                        MjestoTroska,
+                        BrojTemeljnice,
+                        DatumTemeljnice,
+                        SifraRadnika,
+                        DatumPromjene,
+                        id_gbbla};
+                rowBlagajnaBaza_tblRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBlagajnaBaza_tblRow);
+                return rowBlagajnaBaza_tblRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public BlagajnaBaza_tblRow FindByid_gbbla(string id_gbbla) {
+                return ((BlagajnaBaza_tblRow)(this.Rows.Find(new object[] {
+                            id_gbbla})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                BlagajnaBaza_tblDataTable cln = ((BlagajnaBaza_tblDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new BlagajnaBaza_tblDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnBrojBlagajne = base.Columns["BrojBlagajne"];
+                this.columnVrstaKnjizenja = base.Columns["VrstaKnjizenja"];
+                this.columnBrojDokumenta = base.Columns["BrojDokumenta"];
+                this.columnDatumDokumenta = base.Columns["DatumDokumenta"];
+                this.columnIznos = base.Columns["Iznos"];
+                this.columnOsoba = base.Columns["Osoba"];
+                this.columnOsobaOpis = base.Columns["OsobaOpis"];
+                this.columnOpis = base.Columns["Opis"];
+                this.columnKonto = base.Columns["Konto"];
+                this.columnBrojFakture = base.Columns["BrojFakture"];
+                this.columnMjestoTroska = base.Columns["MjestoTroska"];
+                this.columnBrojTemeljnice = base.Columns["BrojTemeljnice"];
+                this.columnDatumTemeljnice = base.Columns["DatumTemeljnice"];
+                this.columnSifraRadnika = base.Columns["SifraRadnika"];
+                this.columnDatumPromjene = base.Columns["DatumPromjene"];
+                this.columnid_gbbla = base.Columns["id_gbbla"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnBrojBlagajne = new global::System.Data.DataColumn("BrojBlagajne", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBrojBlagajne);
+                this.columnVrstaKnjizenja = new global::System.Data.DataColumn("VrstaKnjizenja", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVrstaKnjizenja);
+                this.columnBrojDokumenta = new global::System.Data.DataColumn("BrojDokumenta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBrojDokumenta);
+                this.columnDatumDokumenta = new global::System.Data.DataColumn("DatumDokumenta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatumDokumenta);
+                this.columnIznos = new global::System.Data.DataColumn("Iznos", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIznos);
+                this.columnOsoba = new global::System.Data.DataColumn("Osoba", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOsoba);
+                this.columnOsobaOpis = new global::System.Data.DataColumn("OsobaOpis", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOsobaOpis);
+                this.columnOpis = new global::System.Data.DataColumn("Opis", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpis);
+                this.columnKonto = new global::System.Data.DataColumn("Konto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKonto);
+                this.columnBrojFakture = new global::System.Data.DataColumn("BrojFakture", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBrojFakture);
+                this.columnMjestoTroska = new global::System.Data.DataColumn("MjestoTroska", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMjestoTroska);
+                this.columnBrojTemeljnice = new global::System.Data.DataColumn("BrojTemeljnice", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBrojTemeljnice);
+                this.columnDatumTemeljnice = new global::System.Data.DataColumn("DatumTemeljnice", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatumTemeljnice);
+                this.columnSifraRadnika = new global::System.Data.DataColumn("SifraRadnika", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSifraRadnika);
+                this.columnDatumPromjene = new global::System.Data.DataColumn("DatumPromjene", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatumPromjene);
+                this.columnid_gbbla = new global::System.Data.DataColumn("id_gbbla", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_gbbla);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("BlagajnaBazaKey", new global::System.Data.DataColumn[] {
+                                this.columnid_gbbla}, true));
+                this.columnid_gbbla.AllowDBNull = false;
+                this.columnid_gbbla.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public BlagajnaBaza_tblRow NewBlagajnaBaza_tblRow() {
+                return ((BlagajnaBaza_tblRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new BlagajnaBaza_tblRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(BlagajnaBaza_tblRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.BlagajnaBaza_tblRowChanged != null)) {
+                    this.BlagajnaBaza_tblRowChanged(this, new BlagajnaBaza_tblRowChangeEvent(((BlagajnaBaza_tblRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.BlagajnaBaza_tblRowChanging != null)) {
+                    this.BlagajnaBaza_tblRowChanging(this, new BlagajnaBaza_tblRowChangeEvent(((BlagajnaBaza_tblRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.BlagajnaBaza_tblRowDeleted != null)) {
+                    this.BlagajnaBaza_tblRowDeleted(this, new BlagajnaBaza_tblRowChangeEvent(((BlagajnaBaza_tblRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.BlagajnaBaza_tblRowDeleting != null)) {
+                    this.BlagajnaBaza_tblRowDeleting(this, new BlagajnaBaza_tblRowChangeEvent(((BlagajnaBaza_tblRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveBlagajnaBaza_tblRow(BlagajnaBaza_tblRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "BlagajnaBaza_tblDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class Blagajna_tblRow : global::System.Data.DataRow {
@@ -941,6 +1460,452 @@ namespace WindowsFormsApp1 {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class BlagajnaBaza_tblRow : global::System.Data.DataRow {
+            
+            private BlagajnaBaza_tblDataTable tableBlagajnaBaza_tbl;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal BlagajnaBaza_tblRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableBlagajnaBaza_tbl = ((BlagajnaBaza_tblDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string BrojBlagajne {
+                get {
+                    try {
+                        return ((string)(this[this.tableBlagajnaBaza_tbl.BrojBlagajneColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BrojBlagajne\' in table \'BlagajnaBaza_tbl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.BrojBlagajneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string VrstaKnjizenja {
+                get {
+                    try {
+                        return ((string)(this[this.tableBlagajnaBaza_tbl.VrstaKnjizenjaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VrstaKnjizenja\' in table \'BlagajnaBaza_tbl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.VrstaKnjizenjaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string BrojDokumenta {
+                get {
+                    try {
+                        return ((string)(this[this.tableBlagajnaBaza_tbl.BrojDokumentaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BrojDokumenta\' in table \'BlagajnaBaza_tbl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.BrojDokumentaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DatumDokumenta {
+                get {
+                    try {
+                        return ((string)(this[this.tableBlagajnaBaza_tbl.DatumDokumentaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DatumDokumenta\' in table \'BlagajnaBaza_tbl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.DatumDokumentaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Iznos {
+                get {
+                    try {
+                        return ((string)(this[this.tableBlagajnaBaza_tbl.IznosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Iznos\' in table \'BlagajnaBaza_tbl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.IznosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Osoba {
+                get {
+                    try {
+                        return ((string)(this[this.tableBlagajnaBaza_tbl.OsobaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Osoba\' in table \'BlagajnaBaza_tbl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.OsobaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string OsobaOpis {
+                get {
+                    try {
+                        return ((string)(this[this.tableBlagajnaBaza_tbl.OsobaOpisColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OsobaOpis\' in table \'BlagajnaBaza_tbl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.OsobaOpisColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Opis {
+                get {
+                    try {
+                        return ((string)(this[this.tableBlagajnaBaza_tbl.OpisColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Opis\' in table \'BlagajnaBaza_tbl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.OpisColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Konto {
+                get {
+                    try {
+                        return ((string)(this[this.tableBlagajnaBaza_tbl.KontoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Konto\' in table \'BlagajnaBaza_tbl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.KontoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string BrojFakture {
+                get {
+                    try {
+                        return ((string)(this[this.tableBlagajnaBaza_tbl.BrojFaktureColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BrojFakture\' in table \'BlagajnaBaza_tbl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.BrojFaktureColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string MjestoTroska {
+                get {
+                    try {
+                        return ((string)(this[this.tableBlagajnaBaza_tbl.MjestoTroskaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MjestoTroska\' in table \'BlagajnaBaza_tbl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.MjestoTroskaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string BrojTemeljnice {
+                get {
+                    try {
+                        return ((string)(this[this.tableBlagajnaBaza_tbl.BrojTemeljniceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BrojTemeljnice\' in table \'BlagajnaBaza_tbl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.BrojTemeljniceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DatumTemeljnice {
+                get {
+                    try {
+                        return ((string)(this[this.tableBlagajnaBaza_tbl.DatumTemeljniceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DatumTemeljnice\' in table \'BlagajnaBaza_tbl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.DatumTemeljniceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string SifraRadnika {
+                get {
+                    try {
+                        return ((string)(this[this.tableBlagajnaBaza_tbl.SifraRadnikaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SifraRadnika\' in table \'BlagajnaBaza_tbl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.SifraRadnikaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DatumPromjene {
+                get {
+                    try {
+                        return ((string)(this[this.tableBlagajnaBaza_tbl.DatumPromjeneColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DatumPromjene\' in table \'BlagajnaBaza_tbl\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.DatumPromjeneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string id_gbbla {
+                get {
+                    return ((string)(this[this.tableBlagajnaBaza_tbl.id_gbblaColumn]));
+                }
+                set {
+                    this[this.tableBlagajnaBaza_tbl.id_gbblaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsBrojBlagajneNull() {
+                return this.IsNull(this.tableBlagajnaBaza_tbl.BrojBlagajneColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetBrojBlagajneNull() {
+                this[this.tableBlagajnaBaza_tbl.BrojBlagajneColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsVrstaKnjizenjaNull() {
+                return this.IsNull(this.tableBlagajnaBaza_tbl.VrstaKnjizenjaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetVrstaKnjizenjaNull() {
+                this[this.tableBlagajnaBaza_tbl.VrstaKnjizenjaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsBrojDokumentaNull() {
+                return this.IsNull(this.tableBlagajnaBaza_tbl.BrojDokumentaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetBrojDokumentaNull() {
+                this[this.tableBlagajnaBaza_tbl.BrojDokumentaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDatumDokumentaNull() {
+                return this.IsNull(this.tableBlagajnaBaza_tbl.DatumDokumentaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDatumDokumentaNull() {
+                this[this.tableBlagajnaBaza_tbl.DatumDokumentaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsIznosNull() {
+                return this.IsNull(this.tableBlagajnaBaza_tbl.IznosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetIznosNull() {
+                this[this.tableBlagajnaBaza_tbl.IznosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsOsobaNull() {
+                return this.IsNull(this.tableBlagajnaBaza_tbl.OsobaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetOsobaNull() {
+                this[this.tableBlagajnaBaza_tbl.OsobaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsOsobaOpisNull() {
+                return this.IsNull(this.tableBlagajnaBaza_tbl.OsobaOpisColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetOsobaOpisNull() {
+                this[this.tableBlagajnaBaza_tbl.OsobaOpisColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsOpisNull() {
+                return this.IsNull(this.tableBlagajnaBaza_tbl.OpisColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetOpisNull() {
+                this[this.tableBlagajnaBaza_tbl.OpisColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsKontoNull() {
+                return this.IsNull(this.tableBlagajnaBaza_tbl.KontoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetKontoNull() {
+                this[this.tableBlagajnaBaza_tbl.KontoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsBrojFaktureNull() {
+                return this.IsNull(this.tableBlagajnaBaza_tbl.BrojFaktureColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetBrojFaktureNull() {
+                this[this.tableBlagajnaBaza_tbl.BrojFaktureColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsMjestoTroskaNull() {
+                return this.IsNull(this.tableBlagajnaBaza_tbl.MjestoTroskaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetMjestoTroskaNull() {
+                this[this.tableBlagajnaBaza_tbl.MjestoTroskaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsBrojTemeljniceNull() {
+                return this.IsNull(this.tableBlagajnaBaza_tbl.BrojTemeljniceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetBrojTemeljniceNull() {
+                this[this.tableBlagajnaBaza_tbl.BrojTemeljniceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDatumTemeljniceNull() {
+                return this.IsNull(this.tableBlagajnaBaza_tbl.DatumTemeljniceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDatumTemeljniceNull() {
+                this[this.tableBlagajnaBaza_tbl.DatumTemeljniceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsSifraRadnikaNull() {
+                return this.IsNull(this.tableBlagajnaBaza_tbl.SifraRadnikaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetSifraRadnikaNull() {
+                this[this.tableBlagajnaBaza_tbl.SifraRadnikaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDatumPromjeneNull() {
+                return this.IsNull(this.tableBlagajnaBaza_tbl.DatumPromjeneColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDatumPromjeneNull() {
+                this[this.tableBlagajnaBaza_tbl.DatumPromjeneColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -960,6 +1925,40 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public Blagajna_tblRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class BlagajnaBaza_tblRowChangeEvent : global::System.EventArgs {
+            
+            private BlagajnaBaza_tblRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public BlagajnaBaza_tblRowChangeEvent(BlagajnaBaza_tblRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public BlagajnaBaza_tblRow Row {
                 get {
                     return this.eventRow;
                 }

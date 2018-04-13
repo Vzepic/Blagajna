@@ -54,7 +54,7 @@ namespace WindowsFormsApp1
             Opis_tb.Clear();
 
             Konto_cb.Items.Clear();
-            Konto_cb.SelectedIndex = -1;
+            Konto_cb.Text = "";
 
             Iznos_tb.Clear();
 
@@ -88,7 +88,7 @@ namespace WindowsFormsApp1
             Datum_dtp.Format = DateTimePickerFormat.Custom;
             Datum_dtp.CustomFormat = "dd.MM.yyyy";
 
-            InicijalizirajPolja(0);
+            InicijalizirajPolja(2);
 
             PrimioUplatio_cb.Items.AddRange(Baza.DohvatiOsobe().ToArray());
 
@@ -120,6 +120,10 @@ namespace WindowsFormsApp1
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
                 e.Handled = true;
+            }
+            if (e.KeyChar == (char)13)
+            {
+                SelectNextControl(ActiveControl, true, true, true, true);
             }
         }
 
@@ -159,6 +163,7 @@ namespace WindowsFormsApp1
             Pregled Pregledi = new Pregled();
             Pregledi.BrojBlagajni = this.BrojBlagajni;
             Pregledi.ImeFirme = this.NazivFirme;
+            Pregledi.AdresaFirme = this.AdresaFirme;
             Pregledi.ShowDialog();
             if (Pregledi.Povrat.Count != 0)
             {

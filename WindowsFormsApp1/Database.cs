@@ -211,6 +211,38 @@ namespace WindowsFormsApp1
             return Result;
         }// dohvacanje liste sifra mjesta troska i naziva u formatu Result[n]=siframjestatroska, Result{n+1]=nazivmjestatroska gdje je n=2k+1
 
+        public DateTime DohvatiMinDatum()
+        {
+            DateTime Result = new DateTime();
+            SqlCommand Dohvati = new SqlCommand();
+            Dohvati.Connection = conn;
+            Dohvati.CommandText = "SELECT Min(DatumDokumenta) as DatumDokumenta FROM dbo.gbbla ";
+
+            SqlDataReader DatumReader;
+
+            try
+            {
+                DatumReader = Dohvati.ExecuteReader();
+            }
+            catch
+            {
+                MessageBox.Show("Problem sa dohvacanjem datuma");
+                Result=DateTime.Today;
+                return Result;
+            }
+
+
+
+            while (DatumReader.Read())
+            {
+                Result=Convert.ToDateTime(DatumReader["DatumDokumenta"]);
+            }
+
+            DatumReader.Close();
+
+            return Result;
+        }// dohvacanje min datuma unosa
+
         public DataTable DohvatiZaPregled(string OznakaBlagajne, string VK, DateTime DatumDokumentaOd,DateTime DatumDokumentaDo,string Operator, double Iznos, string Osoba,string Konto)
         {
             DataTable result = new DataTable();
@@ -307,7 +339,7 @@ namespace WindowsFormsApp1
                 GetResult = GetResult.Substring(0, GetResult.IndexOf("WHERE"));
             }
 
-            GetResult += " ORDER BY K1.OznakaBlagajne, K1.DatumDokumenta, K1.VrstaKnjizenja ASC";
+            GetResult += " ORDER BY K1.OznakaBlagajne, K1.DatumDokumenta, K1.VrstaKnjizenja, K1.BrojDokumenta ASC";
 
             SqlDataAdapter adapter = new SqlDataAdapter(GetResult, conn);
 
