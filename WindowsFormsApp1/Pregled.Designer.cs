@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.PregledZa_cb = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,9 +56,9 @@
             this.MjestoTroska = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Temeljnica = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Opis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Trazi_bt = new System.Windows.Forms.Button();
             this.Print_bt = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Prikaz_dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +92,7 @@
             // 
             this.VrstaKnjizenja_cb.FormattingEnabled = true;
             this.VrstaKnjizenja_cb.Items.AddRange(new object[] {
+            "",
             "Početno stanje",
             "Uplatnica",
             "Isplatnica"});
@@ -222,7 +223,7 @@
             this.Prikaz_dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Prikaz_dgv.Size = new System.Drawing.Size(766, 258);
             this.Prikaz_dgv.TabIndex = 23;
-            this.Prikaz_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Prikaz_dgv_CellContentClick);
+            this.Prikaz_dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Prikaz_dgv_CellClick);
             // 
             // Blagajna
             // 
@@ -243,9 +244,9 @@
             // Datum
             // 
             this.Datum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Datum.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Datum.DefaultCellStyle = dataGridViewCellStyle1;
             this.Datum.FillWeight = 10F;
             this.Datum.HeaderText = "Datum";
             this.Datum.Name = "Datum";
@@ -315,6 +316,13 @@
             this.Opis.Name = "Opis";
             this.Opis.ReadOnly = true;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
             // Trazi_bt
             // 
             this.Trazi_bt.Location = new System.Drawing.Point(21, 381);
@@ -334,13 +342,6 @@
             this.Print_bt.Text = "Izvjesće";
             this.Print_bt.UseVisualStyleBackColor = true;
             this.Print_bt.Click += new System.EventHandler(this.Print_bt_Click);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
             // 
             // Pregled
             // 

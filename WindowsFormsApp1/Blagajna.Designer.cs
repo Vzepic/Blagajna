@@ -327,6 +327,7 @@
             this.Controls.Add(this.OznakaBlagajne_cb);
             this.Name = "Blagajna";
             this.Text = "Blagajna Ro-ze 2018";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Blagajna_FormClosing);
             this.Load += new System.EventHandler(this.Blagajna_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -158,6 +158,7 @@ namespace WindowsFormsApp1
         {
             Pregled Pregledi = new Pregled();
             Pregledi.BrojBlagajni = this.BrojBlagajni;
+            Pregledi.ImeFirme = this.NazivFirme;
             Pregledi.ShowDialog();
             if (Pregledi.Povrat.Count != 0)
             {
@@ -179,6 +180,12 @@ namespace WindowsFormsApp1
             string Greska = Baza.UnesiUBazu(ID, OznakaBlagajne_cb.SelectedIndex.ToString().PadLeft(2, '0'), VrstaKnjizenja_cb.SelectedIndex.ToString().PadLeft(2, '0'), BrojDokumenta_tb.Text, Datum_dtp.Value, Convert.ToDouble(Iznos_tb.Text), PrimioUplatio_cb.Text, OpisOsobe_tb.Text, Opis_tb.Text, Konto_cb.Text, BrojFakture_tb.Text, MjestoTroska_cb.Text, "0000");
             InicijalizirajPolja(VrstaKnjizenja_cb.SelectedIndex);
             Iznos_tb.Focus();
+        }
+
+        private void Blagajna_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Baza.Renumeriraj();
+            Baza.CloseConn();
         }
     }
 }

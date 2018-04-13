@@ -307,6 +307,8 @@ namespace WindowsFormsApp1
                 GetResult = GetResult.Substring(0, GetResult.IndexOf("WHERE"));
             }
 
+            GetResult += " ORDER BY K1.OznakaBlagajne, K1.DatumDokumenta, K1.VrstaKnjizenja ASC";
+
             SqlDataAdapter adapter = new SqlDataAdapter(GetResult, conn);
 
             adapter.Fill(result);
@@ -353,6 +355,15 @@ namespace WindowsFormsApp1
 
         }
 
+        public void Renumeriraj()
+        {
+            SqlCommand Renumeriraj = new SqlCommand();
+            Renumeriraj.Connection = conn;
+            Renumeriraj.CommandText = "RenumeriranjeBlagajne";
+            Renumeriraj.CommandType = CommandType.StoredProcedure;
+
+            Renumeriraj.ExecuteNonQuery();
+        }
 
 
 

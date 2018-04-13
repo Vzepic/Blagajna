@@ -67,6 +67,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="IzvjestajSaBazom.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IzvjestajSaBazom.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="IzvjestaqjBlagajne.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -95,6 +101,10 @@
     </Compile>
     <EmbeddedResource Include="Blagajna.resx">
       <DependentUpon>Blagajna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzvjestajSaBazom.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IzvjestajSaBazom.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="IzvjestaqjBlagajne.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
