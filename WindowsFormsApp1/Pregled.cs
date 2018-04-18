@@ -62,12 +62,17 @@ namespace WindowsFormsApp1
 
         private void Print_bt_Click(object sender, EventArgs e)
         {
-            DataTable Prikaz = BazaZaPregled.DohvatiZaPregled(OznakaBlagajne_cb.Text != "" ? (OznakaBlagajne_cb.SelectedIndex-1).ToString().PadLeft(2, '0') : "", VrstaKnjizenja_cb.Text != "" ? (VrstaKnjizenja_cb.SelectedIndex-1).ToString().PadLeft(2, '0') : "", DatumOd_dtp.Value, DatumDo_dtp.Value, IznosOperator_cb.Text, Convert.ToDouble(Iznos_tb.Text), PregledZa_cb.Text, Konto_cb.Text);
-            //DataSet1 ZaReport = new DataSet1();
-            //DataTable Tablica = new DataTable();
-            //ZaReport.Tables.Add(Tablica);
+            DataTable BlagajnaBaza_tbl = BazaZaPregled.DohvatiZaPregled(OznakaBlagajne_cb.Text != "" ? (OznakaBlagajne_cb.SelectedIndex - 1).ToString().PadLeft(2, '0') : "", VrstaKnjizenja_cb.Text != "" ? (VrstaKnjizenja_cb.SelectedIndex - 1).ToString().PadLeft(2, '0') : "", DatumOd_dtp.Value, DatumDo_dtp.Value, IznosOperator_cb.Text, Convert.ToDouble(Iznos_tb.Text), PregledZa_cb.Text, Konto_cb.Text);
+            DataTable BlagajnaSaldo_tbl = BazaZaPregled.DohvatiSaldo(DatumOd_dtp.Value);
 
-            ReportForm Izvjesce = new ReportForm("C:\\Users\\Fooler\\Desktop\\Mama posao\\Test\\Blagajna\\WindowsFormsApp1\\IzvjestajSaBazom.rpt", Prikaz, this.ImeFirme,this.AdresaFirme);
+            BlagajnaBaza_tbl.TableName = "BlagajnaBaza_tbl";
+            BlagajnaSaldo_tbl.TableName = "BlagajnaSaldo_tbl";
+            DataSet Prikaz = new DataSet();
+            Prikaz.Tables.Add(BlagajnaBaza_tbl);
+            Prikaz.Tables.Add(BlagajnaSaldo_tbl);
+            
+
+            ReportForm Izvjesce = new ReportForm("C:\\Users\\Fooler\\Desktop\\Mama posao\\Blagajna\\Blagajna\\WindowsFormsApp1\\IzvjestajSaBazom.rpt", Prikaz, this.ImeFirme,this.AdresaFirme);
 
             /*double saldo = 0;
             string blagajna="";
@@ -116,6 +121,21 @@ namespace WindowsFormsApp1
             Povrat.Add(Prikaz_dgv.Rows[e.RowIndex].Cells[11].Value.ToString());
             BazaZaPregled.CloseConn();
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataTable BlagajnaBaza_tbl = BazaZaPregled.DohvatiZaPregled(OznakaBlagajne_cb.Text != "" ? (OznakaBlagajne_cb.SelectedIndex - 1).ToString().PadLeft(2, '0') : "", VrstaKnjizenja_cb.Text != "" ? (VrstaKnjizenja_cb.SelectedIndex - 1).ToString().PadLeft(2, '0') : "", DatumOd_dtp.Value, DatumDo_dtp.Value, IznosOperator_cb.Text, Convert.ToDouble(Iznos_tb.Text), PregledZa_cb.Text, Konto_cb.Text);
+            DataTable BlagajnaSaldo_tbl = BazaZaPregled.DohvatiSaldo(DatumOd_dtp.Value);
+
+            BlagajnaBaza_tbl.TableName = "BlagajnaBaza_tbl";
+            BlagajnaSaldo_tbl.TableName = "BlagajnaSaldo_tbl";
+            DataSet Prikaz = new DataSet();
+            Prikaz.Tables.Add(BlagajnaBaza_tbl);
+            Prikaz.Tables.Add(BlagajnaSaldo_tbl);
+
+            ReportForm Izvjesce = new ReportForm("C:\\Users\\Fooler\\Desktop\\Mama posao\\Blagajna\\Blagajna\\WindowsFormsApp1\\IspisBroja.rpt", Prikaz, this.ImeFirme, this.AdresaFirme);
+            Izvjesce.ShowDialog();
         }
     }
 }

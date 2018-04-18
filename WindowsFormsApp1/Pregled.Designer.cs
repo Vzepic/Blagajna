@@ -59,6 +59,7 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Trazi_bt = new System.Windows.Forms.Button();
             this.Print_bt = new System.Windows.Forms.Button();
+            this.IspisZaPotpis_bt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Prikaz_dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -343,11 +344,22 @@
             this.Print_bt.UseVisualStyleBackColor = true;
             this.Print_bt.Click += new System.EventHandler(this.Print_bt_Click);
             // 
+            // IspisZaPotpis_bt
+            // 
+            this.IspisZaPotpis_bt.Location = new System.Drawing.Point(673, 381);
+            this.IspisZaPotpis_bt.Name = "IspisZaPotpis_bt";
+            this.IspisZaPotpis_bt.Size = new System.Drawing.Size(113, 34);
+            this.IspisZaPotpis_bt.TabIndex = 26;
+            this.IspisZaPotpis_bt.Text = "Ispiši za potpis";
+            this.IspisZaPotpis_bt.UseVisualStyleBackColor = true;
+            this.IspisZaPotpis_bt.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Pregled
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.IspisZaPotpis_bt);
             this.Controls.Add(this.Print_bt);
             this.Controls.Add(this.Trazi_bt);
             this.Controls.Add(this.Prikaz_dgv);
@@ -407,5 +419,6 @@
         private System.Windows.Forms.Button Trazi_bt;
         private System.Windows.Forms.Button Print_bt;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.Button IspisZaPotpis_bt;
     }
 }

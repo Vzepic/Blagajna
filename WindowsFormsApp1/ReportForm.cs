@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         ReportDocument cryRpt = new ReportDocument();
         
 
-        public ReportForm(string path,DataTable source,string ImeFirme,string AdresaFirme)
+        public ReportForm(string path,DataSet source,string ImeFirme,string AdresaFirme)
         {          
             InitializeComponent();
             cryRpt.Load(path);

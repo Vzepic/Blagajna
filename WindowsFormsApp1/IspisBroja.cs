@@ -16,14 +16,14 @@ namespace WindowsFormsApp1 {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class IzvjestajSaBazom : ReportClass {
+    public class IspisBroja : ReportClass {
         
-        public IzvjestajSaBazom() {
+        public IspisBroja() {
         }
         
         public override string ResourceName {
             get {
-                return "IzvjestajSaBazom.rpt";
+                return "IspisBroja.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace WindowsFormsApp1 {
         
         public override string FullResourceName {
             get {
-                return "WindowsFormsApp1.IzvjestajSaBazom.rpt";
+                return "WindowsFormsApp1.IspisBroja.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace WindowsFormsApp1 {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace WindowsFormsApp1 {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,25 +82,9 @@ namespace WindowsFormsApp1 {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
         
@@ -122,9 +106,9 @@ namespace WindowsFormsApp1 {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedIzvjestajSaBazom : Component, ICachedReport {
+    public class CachedIspisBroja : Component, ICachedReport {
         
-        public CachedIzvjestajSaBazom() {
+        public CachedIspisBroja() {
         }
         
         [Browsable(false)]
@@ -161,7 +145,7 @@ namespace WindowsFormsApp1 {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            IzvjestajSaBazom rpt = new IzvjestajSaBazom();
+            IspisBroja rpt = new IspisBroja();
             rpt.Site = this.Site;
             return rpt;
         }

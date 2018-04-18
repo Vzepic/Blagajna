@@ -397,6 +397,19 @@ namespace WindowsFormsApp1
             Renumeriraj.ExecuteNonQuery();
         }
 
+        public DataTable DohvatiSaldo(DateTime DatumDokumentaDo)
+        {
+            DataTable result = new DataTable();
+
+            string GetResult = "SELECT OznakaBlagajne,SUM(CASE WHEN VrstaKnjizenja = '01' THEN dbo.gbbla.Iznos WHEN VrstaKnjizenja = '02' THEN(dbo.gbbla.Iznos) * -1 ELSE 0 END) as Saldo FROM gbbla where DatumDokumenta < convert(datetime,'" + DatumDokumentaDo.ToShortDateString().TrimEnd('.') + "',103) GROUP By OznakaBlagajne";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(GetResult, conn);
+
+            adapter.Fill(result);
+
+            return result;
+        }//čitanje gbbla
+
 
 
 
