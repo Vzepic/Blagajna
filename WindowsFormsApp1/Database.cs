@@ -401,7 +401,13 @@ namespace WindowsFormsApp1
         {
             DataTable result = new DataTable();
 
-            string GetResult = "SELECT OznakaBlagajne,SUM(CASE WHEN VrstaKnjizenja = '01' THEN dbo.gbbla.Iznos WHEN VrstaKnjizenja = '02' THEN(dbo.gbbla.Iznos) * -1 ELSE 0 END) as Saldo FROM gbbla where DatumDokumenta < convert(datetime,'" + DatumDokumentaDo.ToShortDateString().TrimEnd('.') + "',103) GROUP By OznakaBlagajne";
+            string GetResult = "SELECT DISTINCT(Blagajne.OznakaBlagajne),(CASE	WHEN T2.Saldo IS NULL THEN 0 ELSE T2.Saldo END) as Saldo ";
+            GetResult += "FROM dbo.gbbla as Blagajne ";
+            GetResult += "LEFT JOIN ";
+            GetResult += "(SELECT OznakaBlagajne,SUM(CASE	WHEN VrstaKnjizenja='01' THEN dbo.gbbla.Iznos ";
+            GetResult += "WHEN VrstaKnjizenja='02' THEN (dbo.gbbla.Iznos)*-1 ELSE 0 END) as Saldo ";
+            GetResult+= "FROM dbo.gbbla where DatumDokumenta< "+ "convert(datetime, '" + DatumDokumentaDo.ToShortDateString().TrimEnd('.') + "', 103) ";
+            GetResult += "GROUP By OznakaBlagajne) as T2 ON Blagajne.OznakaBlagajne=T2.OznakaBlagajne";
 
             SqlDataAdapter adapter = new SqlDataAdapter(GetResult, conn);
 

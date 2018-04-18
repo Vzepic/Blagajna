@@ -33,13 +33,13 @@
             // 
             // Izvjesce_crv
             // 
-            this.Izvjesce_crv.ActiveViewIndex = 0;
+            this.Izvjesce_crv.ActiveViewIndex = -1;
             this.Izvjesce_crv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Izvjesce_crv.Cursor = System.Windows.Forms.Cursors.Default;
             this.Izvjesce_crv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Izvjesce_crv.Location = new System.Drawing.Point(0, 0);
             this.Izvjesce_crv.Name = "Izvjesce_crv";
-            this.Izvjesce_crv.Size = new System.Drawing.Size(592, 388);
+            this.Izvjesce_crv.Size = new System.Drawing.Size(831, 642);
             this.Izvjesce_crv.TabIndex = 0;
             this.Izvjesce_crv.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -47,7 +47,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 388);
+            this.ClientSize = new System.Drawing.Size(831, 642);
             this.Controls.Add(this.Izvjesce_crv);
             this.Name = "ReportForm";
             this.Text = "Izvješće";
@@ -58,8 +58,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer Izvjesce_crv;
-        private Blagajna Blagajna1;
-        private Blagajna Blagajna2;
-        private WindowsFormsApp1.IzvjestaqjBlagajne IzvjestaqjBlagajne1;
+        
     }
 }

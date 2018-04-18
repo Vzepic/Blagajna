@@ -72,7 +72,7 @@ namespace WindowsFormsApp1
             Prikaz.Tables.Add(BlagajnaSaldo_tbl);
             
 
-            ReportForm Izvjesce = new ReportForm("C:\\Users\\Fooler\\Desktop\\Mama posao\\Blagajna\\Blagajna\\WindowsFormsApp1\\IzvjestajSaBazom.rpt", Prikaz, this.ImeFirme,this.AdresaFirme);
+            ReportForm Izvjesce = new ReportForm("C:\\Users\\Fooler\\Desktop\\Mama posao\\Blagajna\\Blagajna\\WindowsFormsApp1\\IzvjestajSaBazom.rpt", Prikaz, this.ImeFirme,this.AdresaFirme,this.DatumOd_dtp.Value,this.DatumDo_dtp.Value);
 
             /*double saldo = 0;
             string blagajna="";
@@ -134,7 +134,7 @@ namespace WindowsFormsApp1
             Prikaz.Tables.Add(BlagajnaBaza_tbl);
             Prikaz.Tables.Add(BlagajnaSaldo_tbl);
 
-            ReportForm Izvjesce = new ReportForm("C:\\Users\\Fooler\\Desktop\\Mama posao\\Blagajna\\Blagajna\\WindowsFormsApp1\\IspisBroja.rpt", Prikaz, this.ImeFirme, this.AdresaFirme);
+            ReportForm Izvjesce = new ReportForm("C:\\Users\\Fooler\\Desktop\\Mama posao\\Blagajna\\Blagajna\\WindowsFormsApp1\\IspisBroja.rpt", Prikaz, this.ImeFirme, this.AdresaFirme, this.DatumOd_dtp.Value, this.DatumDo_dtp.Value);
             Izvjesce.ShowDialog();
         }
     }

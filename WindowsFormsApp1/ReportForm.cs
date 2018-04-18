@@ -16,13 +16,15 @@ namespace WindowsFormsApp1
         ReportDocument cryRpt = new ReportDocument();
         
 
-        public ReportForm(string path,DataSet source,string ImeFirme,string AdresaFirme)
+        public ReportForm(string path,DataSet source,string ImeFirme,string AdresaFirme,DateTime DatumOd,DateTime DatumDo)
         {          
             InitializeComponent();
             cryRpt.Load(path);
             cryRpt.SetDataSource(source);
             cryRpt.SetParameterValue("NazivFirme", ImeFirme);
             cryRpt.SetParameterValue("AdresaFirme", AdresaFirme);
+            cryRpt.SetParameterValue("DatumOd", DatumOd);
+            cryRpt.SetParameterValue("DatumDo", DatumDo);
             Izvjesce_crv.ReportSource = cryRpt;
             //cryRpt.SetParameterValue("NazivFirme", ImeFirme);
             //Izvjesce_crv.RefreshReport();
